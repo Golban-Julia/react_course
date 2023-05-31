@@ -1,0 +1,102 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: rgb(134, 212, 186);
+  overflow-x:hidden;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+p{
+  font-size: 13px;
+}
+.posts ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
+  gap: 15px;
+}
+
+.notification {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 2px solid green;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.posts__block{
+  border: 2px solid blue;
+  width:100%;
+  max-width: calc((100% / 5) - 20px);
+  height: 280px;
+  padding: 10px;
+}
+li{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.posts li h3{
+  text-transform:uppercase;
+  font-size: 16px;
+  text-align: center;
+}
+
+label{
+  font-size: 18px;
+  font-weight: 500;
+}
+input[type="text"] {
+  width: 100%;
+  max-width: 350px;
+  padding: 5px 2px 0 5px;
+}
+.btn_block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+button{
+  padding: 5px;
+}
+button:hover{
+  color:white;
+  background-color: black;
+  transition: 0,3s;
+}
