@@ -1,15 +1,16 @@
 import { useState,useEffect } from "react";
-import { fetchPopularRepos } from "../api";
-
+import { fetchPopularRepos } from "../../api";
+import { useParams } from "react-router-dom";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import UserList from "./UserList";
 import Tabs from "./Tabs";
 
-const languages= ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python']
+
 
 const Popular = () => {
-   
-    const [selectedLanguage, setSelectedLanguage] = useState('All');
+    const {language} = useParams();
+    console.log(language);
+    
     const [loading, setLoading]= useState(false);
     const [repos, setRepos] = useState([]);
     const [error, setError]= useState(null);
@@ -18,13 +19,12 @@ const Popular = () => {
     useEffect(() => {
         setLoading(true);
         setTimeout(()=> {
-            fetchPopularRepos(selectedLanguage)
+            fetchPopularRepos(language)
             .then(data => setRepos(data))
             .catch(error => setError(error))
             .finally(()=> setLoading(false));
         },2000)
-    }, [selectedLanguage]);
-
+    }, [language]);
     
     if(error){
         return<p>Error</p>
@@ -42,11 +42,7 @@ const Popular = () => {
             />
             :
             <div >
-                <Tabs 
-                    languages={languages} 
-                    setSelectedLanguage={setSelectedLanguage} 
-                    selectedLanguage={selectedLanguage}
-                />
+                <Tabs/>
                 <UserList repos={repos}/>
             </div>
         }
@@ -55,3 +51,4 @@ const Popular = () => {
 }
 
 export default Popular;
+

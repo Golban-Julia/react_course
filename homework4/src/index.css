@@ -50,6 +50,7 @@ li {
 
 .space-list-items {
   margin-bottom: 7px;
+  text-align: center;
 }
 
 .languages {
@@ -87,6 +88,9 @@ li {
 
 .nav {
   display: flex;
+  justify-content: center;
+  border-bottom: 2px solid rgb(99, 97, 97);
+  padding-bottom: 15px;
 }
 
 .nav li {

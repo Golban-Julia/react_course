@@ -11,12 +11,12 @@ const Nav = () =>{
                         <NavLink to={navLink === 'Home' ? '/' : navLink.toLowerCase()}>
                             {navLink}
                         </NavLink>
+                        
                     </li>
                 ))}
             </ul>
             <Outlet/>
         </>
-        
     ) 
 }
 

@@ -14,3 +14,5 @@ const Tabs = ({languages, selectedLanguage, setSelectedLanguage})=>{
 }
 
 export default Tabs
+
+

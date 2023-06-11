@@ -1,13 +1,9 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-import Home from "./components/Home";
-import Popular from "./components/Popular";
-import Battle from "./components/Battle";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Home from "./pages/Home";
+import Popular from "./pages/Popular";
+import Battle from "./pages/Battle";
 import Nav from "./components/Nav/Nav";
-
+import Results from "./pages/Battle/Results";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +18,17 @@ const router = createBrowserRouter([
         path: "popular",
         element: <Popular/>,
       },
+      // {
+      //   path: "popular/language",
+      //   element: <Popular/>,
+      // },
       {
         path: "battle",
         element: <Battle/>,
+      },
+      {
+        path: "battle/results",
+        element: <Results/>,
       },
       {
         path: "*",
@@ -33,8 +37,7 @@ const router = createBrowserRouter([
           ),
       },
     ]
-  },
-  
+  },  
 ]);
 
 const App = () => (
